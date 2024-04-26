@@ -1,0 +1,114 @@
+{
+    "productindex": [{
+            "product_name": "AX /AX R",
+            "msg": "智能 深度 清晰的显微镜",
+            "type": "更多尼康产品&nbsp;&nbsp;>",
+            "typeId": "/product/646c60af6850931aa404df7d",
+            "prosuctId": 75,
+            "prod_img": "/uploads/home/prod1.1ab7de4c.png?v=1684816541782",
+            "detail_pdf": [{
+                "url": "/uploads/products/wlrydy-Monolith-xl.8ef82a99.pdf?v=1692438686887"
+            }]
+        },
+        {
+            "product_name": "1500 A2 XY",
+            "msg": "智能物联生物安全柜 ，APP实时监控",
+            "type": "更多海尔产品&nbsp;&nbsp;>",
+            "typeId": "/product/646c60b76850931aa404df7f",
+            "prosuctId": 75,
+            "prod_img": "/uploads/home/prod2.b9c17ad4.png?v=1684816541782",
+            "detail_pdf": [{
+                "url": "/uploads/products/jingjiegongzt.10ab238b.pdf?v=1692438686887"
+            }]
+        },
+        {
+            "product_name": "QuantStudioTM",
+            "msg": "前所未有的简易性，卓尔不群的灵活性",
+            "type": "更多ThermoFisher产品&nbsp;&nbsp;>",
+            "typeId": "/product/646c60be6850931aa404df81",
+            "prosuctId": 75,
+            "prod_img": "/uploads/home/prod3.1b13e4a6.png?v=1684816541782",
+            "detail_pdf": [{
+                "url": "/uploads/products/QuantStudio_1.13ed436d.pdf?v=1684816705756"
+            }]
+        }
+    ],
+    "productmsg": [{
+            "product_name": "微量热泳动仪",
+            "msg": "轻松，快速，精准检测最具挑战的分子间相互作用",
+            "type": "更多NanoTemper产品&nbsp;&nbsp;>",
+            "typeId": "/product/646c60c66850931aa404df83",
+            "prosuctId": 75,
+            "prod_img": "/uploads/home/prod4.4866ea54.png?v=1684816541782",
+            "detail_pdf": [{
+                "url": "/uploads/products/wlrydy-Monolith-xl.8ef82a99.pdf?v=1684816705756"
+            }]
+        },
+        {
+            "product_name": "KINETIX",
+            "msg": "新一代大视野超高速 sCMOS 相机",
+            "type": "更多Teledyne Photometrics产品&nbsp;&nbsp;> ",
+            "typeId": "/product/646c60cf6850931aa404df85",
+            "prosuctId": 83,
+            "prod_img": "/uploads/home/prod5.8560cde9.png?v=1684816541782",
+            "detail_pdf": [{
+                "url": "/uploads/products/PM-Kinetix.5fd9cf55.pdf?v=1684816705756"
+            }]
+        },
+        {
+            "product_name": "DEPArray",
+            "msg": "数字细胞分选平台",
+            "type": "更多MENARINI产品&nbsp;&nbsp;>",
+            "typeId": "/product/646c60e36850931aa404df89",
+            "prosuctId": 97,
+            "prod_img": "/uploads/home/prod6.03246f58.png?v=1684816541782",
+            "detail_pdf": [{
+                "url": "/uploads/products/DEPArrayszxbfxpt.cf11aef9.pdf?v=1684816705755"
+            }]
+        },
+        {
+            "product_name": "世界级超薄切片机",
+            "msg": "为包括材料科学和细胞生物学在内的广泛领域提供纳米级研究设计样品制备解决方案",
+            "type": "更多RMC Boeckeler产品&nbsp;&nbsp;>",
+            "typeId": "/product/646c60d86850931aa404df87",
+            "prosuctId": 88,
+            "prod_img": "/uploads/home/prod7.7205dd1a.png?v=1684816541782",
+            "detail_pdf": [{
+                "url": "/uploads/products/RMC-cbqpjcpml.7d34c494.pdf?v=1684816705756"
+            }]
+        }
+    ],
+    "teamlinks": [{
+            "src": "/uploads/home/team1.58d7d0e1.jpg?v=1684816541782",
+            "url": "https://www.microscope.healthcare.nikon.com/zh_CN/products"
+        },
+        {
+            "src": "/uploads/home/team2.e8107973.jpg?v=1684816541782",
+            "url": "https://www.thermofisher.cn/"
+        },
+        {
+            "src": "/uploads/home/team3.eac8563f.jpg?v=1684816541782",
+            "url": "http://www.haier.bioon.com.cn/"
+        },
+        {
+            "src": "/uploads/home/team4.9cd0a76b.jpg?v=1684816541782",
+            "url": "https://boeckeler.com/"
+        },
+        {
+            "src": "/uploads/home/team5.38e6d99c.jpg?v=1684816541782",
+            "url": "https://nanotempertech.com/zh_cn/"
+        },
+        {
+            "src": "/uploads/home/team6.62e0f745.jpg?v=1684816541782",
+            "url": "https://www.photometrics.com/products"
+        },
+        {
+            "src": "/uploads/home/team7.c50f9d77.jpg?v=1684816541782",
+            "url": "https://www.siliconbiosystems.com"
+        },
+        {
+            "src": "/uploads/home/team8.4ab97993.jpg?v=1684816541782",
+            "url": "https://www.hitachi.com.cn/products_service/index.html"
+        }
+    ]
+}
