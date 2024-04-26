@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 **/*.log
+config/config.product.js
 
 tests/**/coverage/
 tests/e2e/reports
@@ -18,6 +19,8 @@ selenium-debug.log
 *.njsproj
 *.sln
 *.local
+
+
 
 package-lock.json
 yarn.lock
