@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const sysModel = require("./sysModel");
-const { mongopath } = require("../config/config.product");
+const { mongopath } = require("../config/config.default");
 
 async function mian() {
   await mongoose.connect(mongopath, {
@@ -19,7 +19,7 @@ mian()
 
 module.exports = {
   User: mongoose.model("User", sysModel.userSchema),
-  New: mongoose.model("New", sysModel.newSchema),
+  News: mongoose.model("News", sysModel.newsSchema),
   Brand: mongoose.model("Brand", sysModel.BrandSchema),
   Classfiy: mongoose.model("Classfiy", sysModel.classfiySchema),
   Product: mongoose.model("Product", sysModel.productSchema),

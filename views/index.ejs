@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+  <link rel='stylesheet' href='/css/global.css' />
+  <link rel='stylesheet' href='/css/index.css' />
+
+</head>
+
+<body>
+  <%- include('components/header'); -%>
+  <main>
+    <div class="swiper index-swiper-banner">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide index-banner-item index-banner-item1">
+          <img src="uploads/index-banner1.svg" alt="redesign" class="banner-logo">
+          <img src="uploads/index-banner-line.svg" alt="line" class="line">
+          <h1>专为企业打造高端品牌网站</h1>
+          <h3>“为您塑造具有影响力的互联网形象”</h3>
+
+        </div>
+        <div class="swiper-slide index-banner-item">Slide 2</div>
+        <div class="swiper-slide index-banner-item">Slide 3</div>
+      </div>
+      <div class="index-swiper-pagination swiper-pagination"></div>
+  </main>
+
+  <%- include('components/footer'); -%>
+  </div>
+
+  <script src="/js/jquery-1.11.3.min.js" defer></script>
+  <script src="/js/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".index-swiper-banner", {
+      pagination: {
+        el: ".index-swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+
 </html>

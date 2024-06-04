@@ -21,7 +21,7 @@ exports.userSchema = new mongoose.Schema({
 });
 
 // 新闻表
-exports.newSchema = new mongoose.Schema({
+exports.newsSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
