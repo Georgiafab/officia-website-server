@@ -1,18 +1,18 @@
 // const fs = require("fs");
 // const { promisify } = require("util");
 // const lodash = require('lodash')
-const { User, New, Company, Banner } = require("../model/index");
+const { User, News, Company, Index } = require("../model/index");
 const { createToken } = require("../util/jwt");
 const { getCurrentTime } = require("../util");
 
 // 编辑banner信息
-exports.editBanner = async (req, res) => {
+exports.editIndex = async (req, res) => {
   try {
-    const dbBack = await Banner.findOne({ main: 1 });
+    const dbBack = await Index.findOne({ main: 1 });
     if (dbBack) {
-      await Banner.updateOne({ main: 1 }, req.body);
+      await Index.updateOne({ main: 1 }, req.body);
     } else {
-      const cModel = new Banner({ ...req.body, main: 1 });
+      const cModel = new Index({ ...req.body, main: 1 });
       await cModel.save();
     }
     res.status(200).json({
@@ -29,10 +29,10 @@ exports.editBanner = async (req, res) => {
   }
 };
 
-// banner管理
-exports.bannerList = async (req, res) => {
+// index管理
+exports.indexList = async (req, res) => {
   try {
-    const detail = await Banner.findOne({ main: 1 });
+    const detail = await Index.findOne({ main: 1 });
     console.log(detail);
     res.status(200).json({
       code: 200,
@@ -92,7 +92,7 @@ exports.editCompany = async (req, res) => {
 exports.delNew = async (req, res) => {
   try {
     const { id } = req.body;
-    const dbBack = await New.findByIdAndRemove(id);
+    const dbBack = await News.findByIdAndRemove(id);
     console.log(dbBack);
     res.json({
       code: 200,
@@ -112,10 +112,10 @@ exports.newDetail = async (req, res) => {
   try {
     let { id, type } = req.query;
     if (type) {
-      const curr = await New.findOne({ enTitle: id });
+      const curr = await News.findOne({ enTitle: id });
       id = curr._id;
     }
-    const list = await New.find().sort({ time: -1 });
+    const list = await News.find().sort({ time: -1 });
     const index = list.findIndex((item) => item._id.toString() == id);
 
     // console.log(id, "111111");
@@ -152,11 +152,11 @@ exports.newlist = async (req, res) => {
   const searchOpt = {
     $or: [{ title: { $regex: reg } }, { content: { $regex: reg } }],
   };
-  const list = await New.find(searchOpt)
+  const list = await News.find(searchOpt)
     .sort({ time: -1 })
     .skip((page - 1) * size)
     .limit(size);
-  const total = await New.countDocuments(searchOpt);
+  const total = await News.countDocuments(searchOpt);
   res.status(200).json({
     code: 200,
     data: {
@@ -177,11 +177,11 @@ exports.addNew = async (req, res) => {
     const time = `${timeObj.year}.${timeObj.month}.${timeObj.day}`;
     const mtime = `<span>${timeObj.day}</span><span>${timeObj.year}.${timeObj.month}</span>`;
     const newDate = { ...req.body, time, mtime };
-    const dbBack = id ? await New.findById(id) : null;
+    const dbBack = id ? await News.findById(id) : null;
     if (dbBack) {
-      await New.updateOne({ _id: id }, newDate);
+      await News.updateOne({ _id: id }, newDate);
     } else {
-      const newModel = new New({ ...newDate, id });
+      const newModel = new News({ ...newDate, id });
       await newModel.save();
     }
     res.status(200).json({

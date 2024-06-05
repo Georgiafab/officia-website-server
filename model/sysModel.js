@@ -58,31 +58,26 @@ exports.newsSchema = new mongoose.Schema({
   ...baseModel,
 });
 
-// 品牌表
-exports.BrandSchema = new mongoose.Schema({
-  brand_name: {
-    type: String,
-    require: true,
-  },
-  enTitle: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  sort_num: {
-    type: Number,
-    default: 0,
-  },
-  ...baseModel,
-});
+// // 品牌表
+// exports.BrandSchema = new mongoose.Schema({
+//   brand_name: {
+//     type: String,
+//     require: true,
+//   },
+//   enTitle: {
+//     type: String,
+//     required: true,
+//     unique: true,
+//   },
+//   sort_num: {
+//     type: Number,
+//     default: 0,
+//   },
+//   ...baseModel,
+// });
 
 // 分类表
 exports.classfiySchema = new mongoose.Schema({
-  brand_id: {
-    type: mongoose.ObjectId,
-    required: true,
-    ref: "Brand",
-  },
   enTitle: {
     type: String,
     required: true,
@@ -96,28 +91,46 @@ exports.classfiySchema = new mongoose.Schema({
 });
 
 // 产品表
-exports.productSchema = new mongoose.Schema({
-  brand_id: {
-    type: mongoose.ObjectId,
-    required: true,
-    ref: "Brand",
-  },
+exports.caseSchema = new mongoose.Schema({
+  // brand_id: {
+  //   type: mongoose.ObjectId,
+  //   required: true,
+  //   ref: "Brand",
+  // },
   classfiy_id: {
     type: mongoose.ObjectId,
     required: true,
     ref: "Classfiy",
   },
-  product_name: {
+  case_name: {
     type: String,
     required: true,
   },
-  product_image: {
+  case_subname: {
     type: String,
     required: true,
   },
-  detail_pdf: {
-    type: Array,
+  case_image: {
+    type: String,
     required: true,
+  },
+  case_desc: {
+    type: String,
+    required: true,
+  },
+  case_banner: {
+    type: String,
+    require: true,
+  },
+  case_uri: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+  },
+  isHome: {
+    type: Boolean,
   },
   ...baseModel,
 });
@@ -255,4 +268,34 @@ exports.bannerSchema = new mongoose.Schema({
     require: true,
   },
   ...baseModel,
+});
+
+// 首页
+exports.indexSchema = new mongoose.Schema({
+  main: {
+    type: Number,
+    required: true,
+  },
+  banner: {
+    type: Array,
+    require: true,
+  },
+  section1: {
+    type: Object,
+    required: true,
+  },
+  caseList: {
+    type: Array,
+    required: true,
+    ref: "case",
+  },
+  client: {
+    type: Object,
+    required: true,
+  },
+  news: {
+    type: Array,
+    required: true,
+    ref: "news",
+  },
 });
