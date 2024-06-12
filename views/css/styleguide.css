@@ -1,0 +1,425 @@
+/* ------------------------- Styleguide ® Code by Dennis -------------------------------------------------- */
+
+
+/* ------------------------- Colors -------------------------------------------------- */
+
+:root {
+
+    --color-dark: #1C1D20;
+    --color-dark-dark: #141517;
+    --color-light: #FFFFFF;
+    --color-blue: #455CE9;
+    --color-green: #C9FF85;
+    --color-blue-dark: #334BD3;
+    --color-gray: #999D9E;
+    --color-lightgray: #E9EAEB;
+    --color-white: #FFFFFF;
+
+    --color-border: rgba(28, 29, 32, 0.175);
+    --color-border-solid: #D2D2D2;
+    --color-border-light: rgba(255, 255, 255, 0.2);
+    --color-border-solid-light: #545557;
+
+    --color-text: #1C1D20;
+    --color-text-light: #FFF;
+
+    --alert-error: #ff4444;
+    --alert-success: #24C958;
+
+    --animation-primary: all .5s cubic-bezier(.7, 0, .3, 1);
+    --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
+    --animation-smooth: all .7s cubic-bezier(.7, 0, .3, 1);
+    --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
+
+    --section-padding: clamp(5em, 21vh, 12em);
+    --container-padding: clamp(2.5em, 8vw, 8em);
+    --gap-padding: clamp(1.5em, 4vw, 2.5em);
+
+}
+
+@media screen and (max-width: 1200px) {
+    :root {
+        --container-padding: 6vw;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    :root {
+        --color-border: rgba(28, 29, 32, 0.225);
+        --color-border-light: rgba(255, 255, 255, 0.225);
+        --container-padding: clamp(1.25em, 4vw, 2.5em);
+        --section-padding: max(2.5em, 12vh);
+    }
+}
+
+/* ------------------------- Buttons -------------------------------------------------- */
+
+.btn {
+    margin-bottom: calc(var(--gap-padding) / 2);
+    position: relative;
+    z-index: 5;
+    border: 0;
+    outline: 0;
+}
+
+.btn input {
+    cursor: pointer;
+}
+
+.btn:hover {
+    z-index: 15;
+}
+
+.btn:last-child {
+    margin-bottom: 0;
+}
+
+.btn-click {
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    border-radius: 2.125em;
+    min-width: 1em;
+    height: 4.25em;
+    padding: 0;
+    font-size: 1em;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    will-change: transform;
+    outline: 0;
+    transform: translateZ(0) rotate(0.001deg);
+}
+
+.btn-click:hover {
+    cursor: pointer;
+}
+
+.btn-normal .btn-click {
+    -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-border);
+    box-shadow: inset 0px 0px 0px 1px var(--color-border);
+}
+
+.btn-fill {
+    background: var(--color-light);
+    position: absolute;
+    width: 150%;
+    height: 200%;
+    border-radius: 50%;
+    top: -50%;
+    left: -25%;
+    transform: translate3d(0, -76%, 0);
+    will-change: transform;
+    transition: background-color ease-in-out .25s;
+}
+
+.btn-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 2.5em;
+    font-weight: 200;
+    z-index: 2;
+    color: var(--color-light);
+    position: relative;
+    transform: rotate(0.001deg);
+    pointer-events: none;
+    will-change: transform, color;
+}
+
+.btn-click:hover {
+    text-decoration: none;
+}
+
+/* --- Button Normal --- */
+
+
+.btn-normal.active .btn-click .btn-text-inner {
+    color: var(--color-white) !important;
+}
+
+.btn-normal.not-active .btn-click .btn-text-inner {
+    transition: var(--animation-smooth);
+}
+
+.btn-normal.active .btn-click .btn-fill {
+    transform: translate3d(0, 0%, 0) !important;
+    background-color: var(--color-dark);
+}
+
+.btn-normal.not-active .btn-click .btn-fill {
+    background-color: var(--color-dark);
+    transition: var(--animation-smooth);
+}
+
+.count-nr {
+    display: inline-block;
+    margin-left: .25em;
+    opacity: .6;
+    font-size: .7em;
+    position: relative;
+    transform: translate(20%, -15%);
+    width: 0;
+    position: absolute;
+}
+
+.btn-normal .arrow svg g {
+    stroke: currentColor;
+}
+
+/* --- Button Normal - Theme Dark --- */
+
+.theme-dark .btn-normal .btn-click {
+    -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-border-light);
+    box-shadow: inset 0px 0px 0px 1px var(--color-border-light);
+}
+
+.theme-dark .btn-normal .btn-text .btn-text-inner {
+    color: var(--color-white) !important;
+}
+
+/* --- Button Normal - Dark --- */
+
+.btn-normal.btn-dark .btn-click {
+    -webkit-box-shadow: inset 0px 0px 0px 0px var(--color-border);
+    box-shadow: inset 0px 0px 0px 0px var(--color-border);
+    background: var(--color-dark);
+}
+
+.btn-normal.btn-dark .btn-text .btn-text-inner {
+    color: var(--color-white) !important;
+}
+
+
+/* --- Button Link --- */
+
+.btn-link {
+    margin: 0;
+}
+
+.btn-link .btn-click {
+    border: 0;
+    height: 2.75em;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.btn-link .btn-text {
+    padding: 0 calc(var(--gap-padding) / 2);
+    position: relative;
+}
+
+.btn-link .btn-click::after {
+    content: "";
+    position: absolute;
+    bottom: -.5em;
+    left: 50%;
+    display: block;
+    width: calc(clamp(16px, 1.2vw, 19px) / 2.75);
+    height: calc(clamp(16px, 1.2vw, 19px) / 2.75);
+    border-radius: 50%;
+    background: var(--color-dark);
+    transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+    transition: var(--animation-fast);
+    will-change: transform;
+}
+
+.btn-link.active .btn-click::after {
+    transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+.btn-link .btn-click:hover::after {
+    transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+.links-wrap {
+    display: flex;
+}
+
+.links-wrap:hover .btn-link .btn-click::after {
+    transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+}
+
+.links-wrap:hover .btn-link .btn-click:hover::after {
+    transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+.theme-dark .btn-link .btn-text {
+    color: var(--color-white);
+}
+
+.theme-dark .btn-link .btn-click::after {
+    background: var(--color-white);
+}
+
+
+/* --- Button Link External --- */
+
+.btn-link.btn-link-external .btn-click {
+    border: 0;
+    height: 2.25em;
+    border-radius: 0;
+    overflow: visible;
+    margin: 0 calc(var(--gap-padding) / 3);
+}
+
+.btn-link.btn-link-external .btn-text {
+    padding: 0;
+}
+
+.btn-link.btn-link-external .btn-click::after {
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-radius: 0;
+    background: var(--color-dark);
+    transform: translate(-50%, -50%) scale(0, 1) rotate(0.001deg);
+}
+
+/* --- Button Link External - Theme Dark --- */
+
+.theme-dark .btn-link.btn-link-external .btn-click::after {
+    background: var(--color-white);
+}
+
+.theme-dark .btn-link .btn-click:hover::after {
+    transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+
+/* --- Button Circle --- */
+
+.btn-round {
+    margin: 0;
+    z-index: 20;
+}
+
+.btn-round .btn-click {
+    width: clamp(17vw, 12vw, 11em);
+    height: clamp(17vw, 12vw, 11em);
+    border-radius: 50%;
+    border: 0;
+    background: var(--color-dark);
+}
+
+.btn-round .btn-text {
+    padding: 0 1em;
+    text-align: center;
+}
+
+.btn-round .btn-text-inner {
+    color: #fff;
+}
+
+.btn-round .change2 {
+    color: #000;
+}
+
+.btn-round .btn-fill {
+    /* background: var(--color-blue); */
+    background-color: #C9FF85;
+}
+
+.color2 .btn-click {
+    background: #C9FF85;
+    /* box-shadow: 0 0 5px #C9FF85; */
+}
+
+/* --- Button Circle - Theme Dark --- */
+
+.theme-dark .btn-round .btn-click {
+    background: var(--color-blue);
+}
+
+.theme-dark .btn-round .btn-fill {
+    background: var(--color-blue-dark);
+}
+
+@media screen and (max-width: 1024px) {
+    .footer {
+        overflow: hidden;
+    }
+
+    .footer .sj_side {
+        position: absolute;
+        right: -5%;
+        bottom: 85vw;
+        width: 15.73333333333333vw;
+        height: 15.73333333333333vw;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid #000;
+    }
+
+    .footer .sj_side .circle {
+        width: 13.33333333333333vw;
+        height: 13.33333333333333vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F7F7F7;
+    }
+
+    .footer .sj_side .circle img {
+        width: 4.666666666666667vw;
+    }
+
+    .is-footer .sj_end {
+        display: flex !important;
+        justify-content: flex-end;
+        margin: 0 0 6.666666666666667vw;
+    }
+
+    .is-footer .sj_end .sj_link {
+        width: 56.26666666666667vw;
+        height: 22vw;
+        border-radius: 26.66666666666667vw;
+        border: 1px solid #000;
+        background: #FFF;
+        display: flex;
+        align-items: center;
+    }
+
+    .is-footer .sj_end .sj_link .circle {
+        width: 17.46666666666667vw;
+        height: 17.46666666666667vw;
+        background: #F7F7F7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 4vw 0 2.4vw;
+        border-radius: 50%;
+    }
+
+    .is-footer .sj_end .sj_link .circle img {
+        width: 7.333333333333333vw;
+    }
+
+    .is-footer .sj_end .sj_link p {
+        color: #000;
+        font-size: 4.8vw;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    :root {
+        --section-padding: 12vh;
+    }
+
+    .btn-round .btn-click {
+        width: 216px;
+        height: 216px;
+    }
+
+}

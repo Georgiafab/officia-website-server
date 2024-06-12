@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
+    "dev": "browser-sync start --proxy 'http://localhost:8082/' --files 'views'",
     "build": "webpack --mode production"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "spdy": "^4.0.2"
   },
   "devDependencies": {
+    "browser-sync": "^3.0.2",
     "clean-webpack-plugin": "^4.0.0",
     "express": "^4.19.2",
     "html-webpack-plugin": "^5.6.0",
