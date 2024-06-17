@@ -9,7 +9,7 @@
     --color-dark-dark: #141517;
     --color-light: #FFFFFF;
     --color-blue: #455CE9;
-    --color-green: #C9FF85;
+    --color-green: #ff0000;
     --color-blue-dark: #334BD3;
     --color-gray: #999D9E;
     --color-lightgray: #E9EAEB;
@@ -80,7 +80,7 @@
     border: 0;
     color: #fff;
     background: transparent;
-    border-radius: 2.125em;
+    /* border-radius: 2.125em; */
     min-width: 1em;
     height: 4.25em;
     padding: 0;
@@ -124,18 +124,26 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0 2.5em;
-    font-weight: 200;
+    padding: 0 20px;
     z-index: 2;
-    color: var(--color-light);
+    color: #fff;
     position: relative;
     transform: rotate(0.001deg);
     pointer-events: none;
     will-change: transform, color;
+    font-size: 14px;
+    font-weight: 200;
+    text-align: left;
+
 }
 
 .btn-click:hover {
     text-decoration: none;
+}
+
+
+.w--current .btn-text {
+    font-weight: 500;
 }
 
 /* --- Button Normal --- */
@@ -324,12 +332,12 @@
 
 .btn-round .btn-fill {
     /* background: var(--color-blue); */
-    background-color: #C9FF85;
+    background-color: #ff0000;
 }
 
 .color2 .btn-click {
-    background: #C9FF85;
-    /* box-shadow: 0 0 5px #C9FF85; */
+    background: #ff0000;
+    /* box-shadow: 0 0 5px #ff0000; */
 }
 
 /* --- Button Circle - Theme Dark --- */

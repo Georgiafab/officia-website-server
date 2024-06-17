@@ -2,224 +2,305 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
   <title><%= title %></title>
-  <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
-  <link rel='stylesheet' href='/css/global.css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/css/index.css' />
-  <link rel="stylesheet" href="css/styleguide.css">
-  <script src="/js/gsap.min.js"></script>
-  <script src="js/ScrollTrigger.min.js"></script>
-
 </head>
 
-<body>
+<body page="home">
   <%- include('components/header'); -%>
   <main>
-    <div class="swiper index-swiper-banner">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide index-banner-item index-banner-item1">
-          <img src="uploads/index-banner1.svg" alt="redesign" class="banner-logo">
-          <img src="uploads/index-banner-line.svg" alt="line" class="line">
-          <h1>专为企业打造高端品牌网站</h1>
-          <h3>“为您塑造具有影响力的互联网形象”</h3>
+    <div class="banner">
+      <div class="container">
+        <div class="banner-text wow text-down" style="animation-delay: 2s;">
+          <p>红设视觉，专注企业网站策划、设计、制作与系统开发服务，秉承“美学”品牌理念，探索营销策略、美学视觉、传达品牌美学视觉生态营销模式，塑造企业非凡的企业网站形象。</p>
 
+          <p class="text-en">Helping Global Innovative Enterprises Provide digital brand services with aesthetic vision
+          </p>
+          <h1>塑造美学网站倡导者</h1>
+          <a href="/contact.html" class="btn-click project-consult magnetic" data-strength="25" data-strength-text="15">
+            <div class="btn-fill"></div>
+            <span class="btn-text">
+              <span class="btn-text-inner change3">项目咨询</span>
+            </span>
+          </a>
         </div>
-        <div class="swiper-slide index-banner-item">Slide 2</div>
-        <div class="swiper-slide index-banner-item">Slide 3</div>
+        <div class="banner-img"></div>
       </div>
-      <div class="index-swiper-pagination swiper-pagination"></div>
     </div>
-
-    <!--    鼠标跟随效果-->
-    <div class="wizardry-code w-embed w-script">
-      <div class="cursor">
-        <div class="cursor__ball cursor__ball--big " style="opacity: 1; transform: translate(881px, 384px);">
-          <svg height="60" width="60">
-            <circle cx="30" cy="30" r="20" stroke-width="0"></circle>
-          </svg>
+    <div class="section section1 container wow text-down">
+      <div class="section1-item">
+        <div class="section1-img">
+          <img src="/images/index/section1-1.jpg" alt="section1-1" />
         </div>
-        <div class="cursor__ball cursor__ball--small" style="opacity: 1; transform: translate(904px, 407px);">
-          <svg height="14" width="14">
-            <circle cx="7" cy="7" r="5" stroke-width="0"></circle>
-          </svg>
+        <h4>美学视觉重构策略</h4>
+        <div class="tags">
+          <span>品牌核心识别</span>
+          <span>统一视觉生态</span>
         </div>
       </div>
-      <style>
-        @media screen and (max-width: 480px) {
-          body {
-            -webkit-overflow-scrolling: auto;
-            scroll-snap-stop: always;
-            cursor: auto;
-          }
-
-          .cursor {
-            display: none;
-          }
-        }
-
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        html::-webkit-scrollbar {
-          display: none;
-        }
-
-        /* Hide scrollbar for IE, Edge and Firefox */
-        html {
-          -ms-overflow-style: none;
-          /* IE and Edge */
-          scrollbar-width: none;
-          /* Firefox */
-        }
-
-        .cursor {
-          pointer-events: none;
-        }
-
-        .cursor__ball--big {
-          opacity: 0;
-        }
-
-        .cursor__ball--small {
-          opacity: 0;
-        }
-
-        .cursor__ball {
-          position: fixed;
-          top: 0;
-          left: 0;
-          mix-blend-mode: difference;
-          z-index: 99999;
-        }
-
-        .cursor__ball circle {
-          fill: #f7f8fa;
-        }
-      </style>
-      <script>
-        // 1. Pass the css styles in an array
-        const styles = [
-          'color: #FF6B00',
-          'font-size: 4em',
-          'font-family: sans-serif',
-          'padding: 10px 20px 20px 20px',
-        ].join(';');
-        // 2. Concatenate the individual array item and concatenate them into a string separated by a semi-colon (;)
-        // 3. Pass the styles variable
-        // console.log('%cMade by ', styles);
-        window.addEventListener("DOMContentLoaded", (event) => {
-          let mql = window.matchMedia("(min-width: 480px)");
-          console.log(mql)
-          if (mql.matches) {
-            const $bigBall = document.querySelector('.cursor__ball--big');
-            const $smallBall = document.querySelector('.cursor__ball--small');
-            const $hoverables = document.querySelectorAll('.hoverable');
-            const $hoverablesLarge = document.querySelectorAll('.hoverable--large');
-            $bigBall.style.transform = "translateX(" + window.clientX + "px)";
-            $bigBall.style.transform = "translateY(" + window.clientY + "px)";
-            $smallBall.style.transform = "translateX(" + window.clientX + "px)";
-            $smallBall.style.transform = "translateY(" + window.clientY + "px)";
-            // Listeners
-            window.addEventListener('mousemove', onMouseMove);
-            for (let i = 0; i < $hoverables.length; i++) {
-              $hoverables[i].addEventListener('mouseenter', onMouseHover);
-              $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
-            }
-            for (let i = 0; i < $hoverablesLarge.length; i++) {
-              $hoverablesLarge[i].addEventListener('mouseenter', onMouseHoverLarge);
-              $hoverablesLarge[i].addEventListener('mouseleave', onMouseHoverOut);
-            }
-            // Move the cursor
-            function onMouseMove(e) {
-              gsap.to($bigBall, .6, {
-                x: e.clientX - 30,
-                y: e.clientY - 30,
-                opacity: 1
-              });
-              gsap.to($smallBall, .1, {
-                x: e.clientX - 7,
-                y: e.clientY - 7,
-                opacity: 1
-              });
-            };
-            // Hover an element
-            function onMouseHover() {
-              gsap.to($bigBall, .3, {
-                scale: 2.2
-              });
-            };
-
-            function onMouseHoverLarge() {
-              gsap.to($bigBall, .3, {
-                scale: 5
-              });
-            };
-
-            function onMouseHoverOut() {
-              gsap.to($bigBall, .3, {
-                scale: 1
-              });
-            };
-          }
-        });
-      </script>
-
+      <div class="section1-item">
+        <div class="section1-img">
+          <img src="/images/index/section1-1.jpg" alt="section1-1" />
+        </div>
+        <h4>美学视觉重构策略</h4>
+        <div class="tags">
+          <span>品牌核心识别</span>
+          <span>统一视觉生态</span>
+        </div>
+      </div>
+      <div class="section1-item">
+        <div class="section1-img">
+          <img src="/images/index/section1-1.jpg" alt="section1-1" />
+        </div>
+        <h4>美学视觉重构策略</h4>
+        <div class="tags">
+          <span>品牌核心识别</span>
+          <span>统一视觉生态</span>
+        </div>
+      </div>
     </div>
-    <!--    滚动条效果-->
-    <div class="lenis-scroll w-embed w-script">
-      <script src="/js/lenis.min.js"></script>
-      <script>
-        //ScrollTrigger.config({ ignoreMobileResize: true });
-        "use strict"; // fix lenis in safari
-        const lenis = new Lenis({
-          lerp: 0.1,
-          wheelMultiplier: 0.7,
-          infinite: false,
-          gestureOrientation: "vertical",
-          normalizeWheel: false,
-          smoothTouch: false,
-          syncTouchLerp: 1,
-          touchMultiplier: 0.1,
-          autoResize: true
-        });
 
-        function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
+    <div class=" section section2 container wow text-down">
+      <div class="content">
+        <div class="section2-text">
+          <p class="ours">OUR CUSTOMER</p>
+          <h2>如何用美学视觉策略<br />
+            重塑企业的<br />
+            品牌核心调性</h2>
 
-        function connectToScrollTrigger() {
-          lenis.on('scroll', ScrollTrigger.update)
-          gsap.ticker.add((time) => {
-            lenis.raf(time * 1000)
-          })
-          gsap.ticker.lagSmoothing(0)
-        }
-        // Uncomment this if using GSAP ScrollTrigger
-        connectToScrollTrigger();
+          <a href="/contact.html" class="btn-click research-dircetion magnetic">
+            <div class="btn-fill"></div>
+            <span class="btn-text">
+              <span class="btn-text-inner change3">研究方向</span>
+            </span>
+          </a>
+        </div>
 
-        window.addEventListener('resize', function () {
-          lenis.resize()
-        });
-      </script>
+
+        <div class="section section2-img"></div>
+      </div>
     </div>
+    <section class="section section3 container wow text-down">
+      <div class="l">Take A Look<br> At Service</div>
+      <div class="btn btn-round circle">
+        <a class="btn-click magnetic ">
+          <div class="btn-fill"></div>
+          <span class="btn-text">
+            <span class="btn-text-inner change3">
+              <div class="st">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <circle cx="7" cy="7" r="7" fill="#ff0000"></circle>
+                </svg>
+                <p>cases</p>
+              </div>
+              <div class="st">专案作品</div>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div class="r">
+        We Can <br> Do For You
+      </div>
+    </section>
+
+    <section class="section section4 case">
+      <div class="cases container">
+        <a href="/caseInfo/9.html" class="wow text-down hover-rotate-container">
+          <div class="pic company-card w-inline-block hover-rotate-inner">
+            <img src="uploads/case-img.jpg" alt="">
+          </div>
+          <div class="text">
+            <p class="p1">华为</p>
+            <div class="des">
+              极简慕枫与华为携手合作，共同打造了一个引领科技潮流的品牌官网。这个官网不仅汇聚了华为最前沿的技术资讯和创新产品，更通过极简慕枫的专业网站设计，为用户带来流畅、直观、极致的浏览体验。在这里，用户能够深入了解华为的科技创新实力，感受其智慧生活的魅力。同时，这个官网也成为了华为品牌展示、产品推广、互动交流的重要平台，为华为与用户之间建立了更加紧密的联系。
+            </div>
+            <div class="tag">
+              <p>集团官网建设</p>
+              <p>视觉设计</p>
+            </div>
+          </div>
+        </a>
+        <a href="/caseInfo/12.html" class="wow text-down hover-rotate-container">
+          <div class="pic company-card w-inline-block hover-rotate-inner">
+            <img src="uploads/case-img.jpg" alt="">
+          </div>
+          <div class="text">
+            <p class="p1">迪卡侬Perfly独立站</p>
+            <div class="des">
+              极简慕枫与全球知名体育用品零售巨头迪卡侬（Perfly）达成战略合作，共同打造了一个集运动、时尚与科技于一体的全新线上购物平台。这一平台不仅展现了迪卡侬在运动装备领域的专业与多元，更通过极简慕枫的精湛技艺，为用户带来了一种直观、流畅且极富吸引力的购物体验。同时，这个线上平台还注重用户体验，通过极简的设计风格、直观的导航以及高效的购物流程，确保用户能够享受到便捷、舒适的购物体验。这一合作不仅提升了迪卡侬品牌的在线影响力，也为运动爱好者提供了一个集购物、学习与交流于一体的综合性平台。
+            </div>
+            <div class="tag">
+              <p>品牌独立站建设</p>
+              <p>视觉设计</p>
+            </div>
+          </div>
+        </a>
+        <a href="/caseInfo/15.html" class="wow text-down hover-rotate-container">
+          <div class="pic company-card w-inline-block hover-rotate-inner">
+            <img src="/uploads/case-img.jpg" alt="">
+          </div>
+          <div class="text">
+            <p class="p1">极简慕枫品牌官网——2.0</p>
+            <div class="des">
+              极简慕枫，专注于品牌视觉生态设计，秉承“极简”品牌理念，探索极简策略、极简视觉、极简传达的品牌视觉生态营销模式，研究品牌官网到品牌全案视觉生态的全方位品牌数字化设计。在信息爆炸的时代，我们如何用最简单最直接的方法将信息最有效地传达给我们客户是我们的研究方向。
+            </div>
+            <div class="tag">
+              <p>品牌官网建设</p>
+              <p>视觉设计</p>
+              <p>品牌迭代升级</p>
+            </div>
+          </div>
+        </a>
+        <a href="/caseInfo/13.html" class="wow text-down hover-rotate-container">
+          <div class="pic company-card w-inline-block hover-rotate-inner">
+            <img src="/uploads/case-img.jpg" alt="">
+          </div>
+          <div class="text">
+            <p class="p1">舜宇智能光学</p>
+            <div class="des">
+              极简慕枫与舜宇智能光学携手合作，共同打造了一个兼具科技感与艺术美感的品牌官网。这一官网不仅展现了舜宇智能光学在光学科技领域的领先地位，更通过极简慕枫的精湛技艺，为用户带来了一种极具吸引力的视觉盛宴。极简慕枫凭借其深厚的网站建设经验，将舜宇智能光学的创新科技、高品质产品以及独特的设计理念完美融合。官网设计简洁而不失深度，既突出了舜宇智能光学的专业性，又体现了品牌的独特魅力。用户可以通过这个官网轻松了解舜宇智能光学的最新技术成果、产品线以及应用案例，同时还能享受到流畅且富有创意的用户体验。
+            </div>
+            <div class="tag">
+              <p>品牌官网建设</p>
+              <p>视觉设计</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="more wow text-down ">
+        <a href="/cases.html?id=13" class="btn-click magnetic case-more">
+          <div class="btn-fill" style="background-color: #000;"></div>
+          <span class="btn-text">
+            <span class="btn-text-inner change">了解更多</span>
+          </span>
+        </a>
+      </div>
+
+
+    </section>
+
+
+    <div data-w-id="9461123f-dc1f-3fc5-520c-19382475a697" class="section is-manifesto black_section">
+      <div data-w-id="9461123f-dc1f-3fc5-520c-19382475a698" class="container is-manifesto">
+        <div class="manifesto_text-wrap">
+          <div class="st ours">
+            <p>ABOUT US</p>
+          </div>
+          <h3 class="is--white manifesto_heading split-lines">
+            <p class="manifesto_heading_title">塑造品牌美学<span style="font-weight: 200;">倡导者</span></p>
+            <p>红设视觉，是一个独特性的设计工作室</p>
+            <p>围绕“美学”核心理念，帮助企业全面策划并分析品牌展示方向</p>
+            <p>探索营销策略、美学视觉、传达品牌美学视觉生态营销模式，</p>
+
+            <p>塑造企业非凡的企业网站形象。</p>
+
+            <p class="en frist-en">Redesign is a unique design studio that revolves around the core concept of
+              "aesthetics" to
+              help
+              businesses</p>
+            <p class="en">comprehensively plan and analyze their brand presentation direction. We explore marketing
+              strategies,</p>
+            <p class="en">aesthetic visuals, and convey brand aesthetic visual ecological marketing models to shape
+              extraordinary
+            </p>
+            <p class="en">corporate website images for businesses.</p>
+          </h3>
+        </div>
+
+        <div class="manifesto_description-wrap wow text-down">
+          <svg width="554" height="528" viewBox="0 0 554 528" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="278" cy="157" r="156.5" stroke="white" />
+            <circle cx="157" cy="371" r="156.5" stroke="white" />
+            <circle cx="397" cy="371" r="156.5" stroke="white" />
+            <path
+              d="M247.792 152.072H260.464V150.152H263.28L261.584 149.032C262.992 146.984 263.984 144.808 264.56 142.472L267.504 143.112C267.312 143.816 267.088 144.52 266.864 145.16H276.048V147.848H270.608C271.248 148.84 271.76 149.768 272.176 150.6L269.52 151.624C268.944 150.344 268.272 149.064 267.504 147.848H265.776C265.264 148.872 264.72 149.8 264.144 150.696L263.536 150.312V152.072H276.208V154.824H263.536V156.68H274.032V162.888C274.032 164.68 273.072 165.576 271.152 165.576H268.976L268.208 162.888L270.288 163.048C270.768 163.048 271.024 162.76 271.024 162.248V159.336H263.536V161.928C266.928 164.936 271.376 167.272 276.944 169L275.344 171.784C270.8 170.056 266.864 167.752 263.536 164.808V172.392H260.464V164.904C257.264 167.912 253.616 170.248 249.584 171.944L247.76 169.224C252.688 167.496 256.944 165.032 260.464 161.864V159.336H253.488V165.448H250.512V156.68H260.464V154.824H247.792V152.072ZM252.304 147.848C251.6 148.968 250.864 150.024 250.032 150.984L247.408 149.352C249.392 147.208 250.8 144.904 251.632 142.44L254.544 143.08C254.288 143.816 254 144.52 253.712 145.16H261.36V147.848H256.656C257.296 148.84 257.872 149.768 258.32 150.632L255.568 151.624C254.992 150.344 254.288 149.064 253.52 147.848H252.304ZM298.224 145.544H301.168V165.32H298.224V145.544ZM304.304 172.008H299.696L298.992 169.096C300.496 169.224 301.904 169.288 303.248 169.288C304.144 169.288 304.624 168.84 304.624 167.976V142.856H307.632V168.744C307.632 170.92 306.512 172.008 304.304 172.008ZM295.408 149.64L295.888 152.584L286.864 153.96C286.992 155.4 287.184 156.712 287.44 157.896C287.696 159.112 287.952 160.232 288.272 161.224C289.936 159.24 291.376 156.936 292.56 154.312L295.216 155.688C293.616 159.208 291.696 162.184 289.424 164.584C289.648 165.128 289.872 165.608 290.128 166.056C291.216 167.912 292.24 168.84 293.136 168.872C293.648 168.776 294.16 167.24 294.704 164.264L297.264 165.928C296.784 167.56 296.272 168.936 295.696 170.056C294.992 171.4 294.192 172.104 293.296 172.104C291.76 172.104 290.256 171.048 288.752 169C288.208 168.264 287.728 167.464 287.312 166.6C285.392 168.2 283.28 169.48 280.976 170.44L279.152 167.72C281.712 166.696 284.016 165.32 286.032 163.528C285.616 162.376 285.232 161.192 284.912 159.912C284.496 158.312 284.176 156.488 283.92 154.408L280.016 155.016L279.568 152.072L283.6 151.432C283.376 148.872 283.248 145.992 283.248 142.824H286.32C286.32 145.832 286.384 148.552 286.576 150.984L295.408 149.64ZM290.576 142.664C291.728 144.072 292.848 145.64 293.904 147.336L291.344 148.616C290.32 146.856 289.232 145.288 288.08 143.88L290.576 142.664Z"
+              fill="white" />
+            <path
+              d="M130.76 373.848C129.672 374.936 128.488 376.024 127.208 377.112L126.248 373.912C130.312 370.456 133.064 367.128 134.504 363.864H126.984V360.952H131.528C131.048 359.704 130.504 358.488 129.864 357.304L132.744 356.472C133.448 358.104 134.024 359.608 134.408 360.952H137.544V363.512C136.776 365.784 135.528 368.024 133.864 370.264C135.528 371.288 137.064 372.44 138.472 373.752L136.744 376.376C135.752 375.288 134.76 374.328 133.736 373.496V386.296H130.76V373.848ZM153.512 357.848V375.864H150.44V360.76H142.344V375.864H139.336V357.848H153.512ZM152.552 385.784H149.384C147.464 385.784 146.504 384.728 146.504 382.648V377.336C146.12 378.456 145.704 379.448 145.256 380.344C143.688 383.032 141.192 385.08 137.736 386.552L136.104 383.896C139.464 382.424 141.736 380.536 142.952 378.264C144.104 375.832 144.744 372.696 144.872 368.824V362.776H147.816V368.824C147.72 371.448 147.432 373.784 146.952 375.768H149.448V382.008C149.448 382.648 149.704 383 150.28 383H152.008C152.328 383 152.584 382.84 152.776 382.52C152.968 382.136 153.096 381.048 153.192 379.224L156.008 380.152C155.784 382.872 155.4 384.504 154.888 385.048C154.376 385.528 153.576 385.784 152.552 385.784ZM181.96 368.216V379.928H179.016V371.032H166.984V379.928H164.04V368.216H181.96ZM186.696 362.616V369.432H183.624V365.56H162.408V369.4H159.336V362.616H164.04C163.272 361.208 162.472 359.928 161.64 358.808L164.328 357.496C165.32 358.872 166.28 360.376 167.176 362.008L165.96 362.616H172.168C171.336 360.888 170.472 359.352 169.576 358.008L172.264 356.696C173.16 358.104 174.024 359.608 174.888 361.272L172.232 362.616H177.608C178.824 360.824 179.88 358.904 180.744 356.888L183.752 357.976C182.856 359.8 181.928 361.336 180.968 362.616H186.696ZM171.016 372.856H173.992V376.28C173.992 376.344 173.96 376.44 173.96 376.536H176.52V381.464C176.52 382.424 176.968 382.904 177.864 382.904H182.728C183.176 382.904 183.528 382.712 183.784 382.392C184.04 382.008 184.2 380.856 184.328 378.968L187.112 379.864C186.888 382.68 186.472 384.408 185.864 384.984C185.288 385.496 184.424 385.752 183.272 385.752H176.936C174.696 385.752 173.576 384.504 173.576 382.072V378.616C173.064 380.344 172.104 381.784 170.696 382.968C168.712 384.504 165.448 385.72 160.968 386.552L159.208 383.864C163.688 383.096 166.76 382.168 168.392 381.016C169.992 379.8 170.856 378.2 171.016 376.28V372.856Z"
+              fill="white" />
+            <path
+              d="M368.424 358.456H393.64V361.4H388.52V369.08H395.272V372.024H388.52V385.88H385.48V372.024H376.904C376.584 375.224 375.976 377.88 375.016 380.024C373.8 382.712 371.752 384.792 368.904 386.232L367.272 383.672C369.832 382.168 371.592 380.248 372.52 377.944C373.128 376.28 373.544 374.296 373.8 372.024H366.76V369.08H374.024C374.024 368.824 374.056 368.568 374.056 368.376V361.4H368.424V358.456ZM377.128 361.4V368.376C377.128 368.632 377.096 368.856 377.096 369.08H385.48V361.4H377.128ZM400.296 367.032L402.824 357.688L405.864 358.2L404.2 364.12H408.936C409.544 361.752 410.024 359.256 410.408 356.632L413.512 357.016C413.128 359.544 412.648 361.912 412.104 364.12H426.76V367.032H411.336C411.016 368.088 410.664 369.08 410.344 370.04H423.144V372.6C422.312 375.224 420.744 377.592 418.376 379.704C420.808 381.048 423.752 382.296 427.176 383.448L425.608 386.328C421.736 384.92 418.472 383.352 415.848 381.688C413.32 383.448 410.216 385.048 406.536 386.488L404.936 383.608C408.136 382.456 410.888 381.176 413.16 379.8C411.08 378.136 409.512 376.344 408.488 374.456C406.184 379.192 403.272 382.968 399.784 385.784L398.216 382.968C402.632 379.064 405.928 373.752 408.104 367.032H400.296ZM410.696 372.792C411.752 374.68 413.416 376.44 415.688 378.04C417.704 376.408 419.176 374.648 420.072 372.792H410.696ZM418.888 356.664C421.096 358.328 422.952 360.024 424.456 361.72L422.28 363.896C421 362.232 419.208 360.504 416.84 358.68L418.888 356.664Z"
+              fill="white" />
+          </svg>
+
+        </div>
+      </div>
+    </div>
+
+    <section class="section5">
+      <!-- <div class="title">
+        <p class="p1">pithy mfweb</p>
+        <p class="p2">大道至简，简中求极，是谓“极简”</p>
+      </div> -->
+      <div class="allItems">
+        <div class="item wow text-down active">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="121" height="125" viewBox="0 0 121 125" fill="none">
+              <mask id="path-1-inside-1_818_2202" fill="white">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M112 113.001H12V13C12 13 12.0001 13 12.0001 13C67.2286 13 112 57.7715 112 113C112 113 112 113.001 112 113.001Z" />
+              </mask>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M112 113.001H12V13C12 13 12.0001 13 12.0001 13C67.2286 13 112 57.7715 112 113C112 113 112 113.001 112 113.001Z"
+                fill="white" fill-opacity="0.35" />
+              <path
+                d="M112 113.001V114.001H113V113.001H112ZM12 113.001H11V114.001H12V113.001ZM12 13V12H11V13H12ZM112 112.001H12V114.001H112V112.001ZM13 113.001V13H11V113.001H13ZM12 14C12 14 12 14 12 14C12.0001 14 12.0001 14 12.0001 14V12C12.0001 12 12.0001 12 12 12C12 12 12 12 12 12V14ZM12.0001 14C66.6763 14 111 58.3238 111 113H113C113 57.2192 67.7808 12 12.0001 12V14ZM111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113 111 113 111 113V113C111 113 111 113 111 113C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001C111 113.001 111 113.001 111 113.001V113.001C111 113.001 111 113.001 111 113.001H113C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113.001C113 113.001 113 113.001 113 113.001V113.001C113 113.001 113 113.001 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113C113 113 113 113 113 113C113 113 113 113 113 113C113 113 113 113 113 113V113C113 113 113 113 113 113H111Z"
+                fill="black" mask="url(#path-1-inside-1_818_2202)" />
+              <path d="M13 12.5L108.5 112" stroke="black" stroke-dasharray="13 13" />
+              <circle cx="12.5" cy="112.5" r="12" fill="white" stroke="black" />
+              <circle cx="12.5" cy="12.5" r="12" fill="white" stroke="black" />
+              <circle cx="108.5" cy="112.5" r="12" fill="white" stroke="black" />
+            </svg>
+          </div>
+          <div class="dt">美学塑造</div>
+
+          <div class="dt2"><span>塑造</span>用户对品牌<span>第一印象</span></div>
+          <div class="des">
+            <p><span
+                style="white-space-collapse: preserve;">通过美学设计独特的视觉元素和吸引人的外观，使品牌在众多竞争者中脱颖而出。一个让客户印象深刻和独特的网站可以快速与竞争对手区分开来。</span>
+            </p>
+            <div>&nbsp;</div>
+          </div>
+        </div>
+        <div class="item wow text-down">
+          <div class="icon">
+            <svg width="134" height="150" viewBox="0 0 134 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.4629 116.369L66.4297 19.1065L109.396 116.369H23.4629Z" fill="white" fill-opacity="0.35"
+                stroke="black" />
+              <path
+                d="M112.213 106.5L117.842 85.5L118.325 85.6295L120.656 76.9311L122.988 85.6295L123.471 85.5L129.1 106.5L128.617 106.629L131.263 116.5H126.285V117H115.027V116.5H110.05L112.695 106.629L112.213 106.5Z"
+                fill="white" fill-opacity="0.35" stroke="black" stroke-dasharray="20 20" />
+              <path
+                d="M4.55625 106.5L10.1854 85.5L10.6684 85.6295L13 76.9311L15.3316 85.6295L15.8146 85.5L21.4437 106.5L20.9608 106.629L23.6067 116.5H18.6292V117H7.37084V116.5H2.39335L5.0392 106.629L4.55625 106.5Z"
+                fill="white" fill-opacity="0.35" stroke="black" stroke-dasharray="20 20" />
+              <circle cx="66.5" cy="12.5" r="12" fill="white" stroke="black" />
+            </svg>
+          </div>
+          <div class="dt">深刻印象</div>
+
+          <div class="dt2"><span>深刻</span>用户对品牌<span>第一印象</span></div>
+          <div class="des">
+            <p><span
+                style="white-space-collapse: preserve;">通过美学设计独特的视觉元素和吸引人的外观，使品牌在众多竞争者中脱颖而出。一个让客户印象深刻和独特的网站可以快速与竞争对手区分开来。</span>
+            </p>
+            <p style="text-align: justify;">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <%- include('components/footer'); -%>
   </div>
 
-  <script src="/js/jquery-1.11.3.min.js" defer></script>
-  <script src="/js/swiper-bundle.min.js"></script>
 
-  <script src="/js/magnet.js" defer></script>
-
-  <script>
-    var swiper = new Swiper(".index-swiper-banner", {
-      pagination: {
-        el: ".index-swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+  <script src="js/split-type.js" defer></script>
+  <!-- <script src="/js/anime.min.js" defer></script> -->
+  <script src="/js/index.js" defer></script>
 
 </body>
 

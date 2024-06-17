@@ -1,58 +1,160 @@
-<footer>
-    <div class="footer-top">
-        <div class="footer-nav">
-            <div class="footer-nav-item">
-                <h3> 高端网站设计</h3>
-                <ul>
-                    <li>上市企业网站定制</li>
-                    <li>外贸行业网站设计</li>
-                    <li>营销型网站设计</li>
-                    <li>集团公司网站设计</li>
-                    <li>集团公司网站设计</li>
-                    <li>高端网站定制设计</li>
-                    <li>响应式网站设计</li>
-                </ul>
+<div class="footer  wow text-down">
+
+    <div class="need">
+        <p class="line-word">
+            不妨多一个“<span>美学</span>”选择
+        </p>
+        <div class="l">
+            <div class="t1">
+                I Need To <br>
+                <span>Consult</span>
             </div>
-            <div class="footer-nav-item">
-                <h3> 企业官网设计</h3>
-                <ul>
-                    <li>上市企业网站定制</li>
-                    <li>外贸行业网站设计</li>
-                    <li>营销型网站设计</li>
-                    <li>集团公司网站设计</li>
-                    <li>集团公司网站设计</li>
-                    <li>高端网站定制设计</li>
-                    <li>响应式网站设计</li>
-                </ul>
-            </div>
-            <div class="footer-nav-item">
-                <h3> 电商网页设计</h3>
-                <ul>
-                    <li>上市企业网站定制</li>
-                    <li>外贸行业网站设计</li>
-                    <li>营销型网站设计</li>
-                    <li>集团公司网站设计</li>
-                    <li>集团公司网站设计</li>
-                    <li>高端网站定制设计</li>
-                    <li>响应式网站设计</li>
-                </ul>
-            </div>
-            <div class="footer-nav-item">
-                <h3> Redesign</h3>
-                <ul>
-                    <li>联系我们</li>
-                    <li><a href="/join-us">加入我们</a></li>
-                    <li><a href="/news">新闻动态</a></li>
-                </ul>
+            <div class="btns">
+                <a class="btn-click magnetic" href="mailto:Red@redesign86.com" data-strength="25"
+                    data-strength-text="15">
+                    <div class="btn-fill"></div>
+                    <span class="btn-text">
+                        <span class="btn-text-inner change">Red@redesign86.com</span>
+                    </span>
+                </a>
+                <a target="_blank" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                    <div class="btn-fill"></div>
+                    <span class="btn-text">
+                        <span class="btn-text-inner change">13667043458</span>
+                    </span>
+                </a>
             </div>
         </div>
-        <img src="uploads/footer-code.jpg" class="footer-code" alt="code">
-    </div>
-    <div class="footer-bottom">
-        <div class="footer-left">
-            <img src="uploads/footer-logo.svg" alt="redesign">
-            <span>红设设计</span>
+        <div class="r">
+            <div class="btn btn-round circle">
+                <a class="btn-click magnetic " data-strength="100" data-strength-text="50" href="/contact.html">
+                    <div class="btn-fill"></div>
+                    <span class="btn-text">
+                        <span class="btn-text-inner change3">
+                            <div class="st">
+
+                                <p class="ours">Let us contact you</p>
+                            </div>
+                            <div class="st">让我们联系您</div>
+                        </span>
+                    </span>
+                </a>
+            </div>
         </div>
-        <p>Copyright © 2018 逐鹿科技有限公司版权所有 抄袭必究 </p>
     </div>
-</footer>
+
+
+    <!--    滚动条效果-->
+    <div class="lenis-scroll w-embed w-script">
+        <script src="/js/lenis.min.js"></script>
+        <script>
+            //ScrollTrigger.config({ ignoreMobileResize: true });
+            "use strict"; // fix lenis in safari
+            const lenis = new Lenis({
+                lerp: 0.3,
+                wheelMultiplier: 0.7,
+                infinite: false,
+                gestureOrientation: "vertical",
+                normalizeWheel: false,
+                smoothTouch: false,
+                syncTouchLerp: 1,
+                touchMultiplier: 0.1,
+                autoResize: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            function connectToScrollTrigger() {
+                lenis.on('scroll', ScrollTrigger.update)
+                gsap.ticker.add((time) => {
+                    lenis.raf(time * 1000)
+                })
+                gsap.ticker.lagSmoothing(0)
+            }
+            // Uncomment this if using GSAP ScrollTrigger
+            connectToScrollTrigger();
+
+            window.addEventListener('resize', function () {
+                lenis.resize()
+            });
+        </script>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <a href="/" aria-current="page" class="footer-logo">
+                    <svg width="197" height="32" viewBox="0 0 197 32">
+                        <use xlink:href="#logoIcon"></use>
+                    </svg>
+                </a>
+                <p class="footer-desc">红设视觉，专注企业网站策划、设计、制作与系统开发服务，秉承“美学”品牌理念，探索营销策略、美学视觉、传达品牌美学视觉生态营销模式，塑造企业非凡的企业网站形象。
+                </p>
+
+                <div class="footer-nav">
+                    <a href="/" class="btn-click magnetic p-button top_nav-link" data-strength="20">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">Home 首页</span>
+                        </span>
+                    </a>
+                    <a href="/service.html" class="btn-click magnetic p-button" data-strength="20">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">Case 案例</span>
+                        </span>
+                    </a>
+                    <a href="/cases.html" class="btn-click magnetic p-button " data-strength="20">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">Service 服务</span>
+                        </span>
+                    </a>
+                    <a href="/about.html" class="btn-click magnetic p-button " data-strength="20">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">Contact 联系</span>
+                        </span>
+                    </a>
+                    <a href="/science.html" class="btn-click magnetic p-button " data-strength="20">
+                        <span class="btn-text">
+                            <span class="btn-text-inner">About 关于</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="footer-contact">
+                    <p class="footer-p">商务合作</p>
+                    <p class="footer-tel">136 6704 3458</p>
+                    <!-- <img src="" alt=""> -->
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="120" height="120" fill="white" />
+                    </svg>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bot-left">
+                    Copyright @ 2024 Redesign Technology Co., LTD. All Rights Reserved.
+                </div>
+
+                <div class="footer-bot-right">
+                    <p>
+                        <img src="uploads/footer-policy.png" alt="policy">
+                        粤公网安备:440304020000000号</p>
+                    <p>
+                        <img src="uploads/footer-icp.png" alt="icp">
+                        粤ICP备10056793号</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/jquery-1.11.3.min.js" defer></script>
+    <script src="/js/gsap.min.js" defer></script>
+    <script src="js/ScrollTrigger.min.js" defer></script>
+    <script src="js/global.js" defer></script>
+    <!-- <script src="/js/swiper-bundle.min.js"></script> -->
+    <script src="/js/magnet.js" defer></script>
+    <script src="js/wow.min.js" defer></script>
+    <script>
+        new WOW().init();
+    </script>
