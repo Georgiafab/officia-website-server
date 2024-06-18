@@ -719,6 +719,17 @@ html.w-mod-touch * {
     display: table;
 }
 
+.flex {
+    display: flex;
+
+}
+
+.flex-align-center {
+    align-items: center;
+
+}
+
+
 
 .w-clearfix:after {
     clear: both;
@@ -805,6 +816,7 @@ html.w-mod-touch * {
 
 [page=home] .top-nav {
     background-color: #000;
+
     color: #fff;
 }
 
@@ -832,17 +844,22 @@ html.w-mod-touch * {
     border: 1px solid #fff;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
 
 .top-nav {
-    z-index: 3;
     width: 100%;
     justify-content: space-between;
-    position: fixed;
+
     background-color: #fff;
     height: 100px;
     display: flex;
     align-items: center;
     color: #000;
+
 }
 
 .top-nav svg {
@@ -934,6 +951,7 @@ html.w-mod-touch * {
     color: #F04444;
 }
 
+
 .footer .need .l .btns {
     display: flex;
     margin-top: 2vw
@@ -960,6 +978,20 @@ html.w-mod-touch * {
 
 .footer .need .l .btns a .btn-text {
     color: #000;
+}
+
+.let-us {
+    display: flex;
+    align-items: center;
+}
+
+.let-us::before {
+    content: "";
+    display: block;
+    width: 0.9vw;
+    height: 0.9vw;
+    background-color: #FF0000;
+    margin-right: 0.8vw;
 }
 
 

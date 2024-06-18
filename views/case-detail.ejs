@@ -4,11 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/case-detail.css">
     <title>Document</title>
 </head>
 
 <body>
+    <%- include('components/header'); -%>
+    <main class="container">
+        <div class="section1 wow text-down" style="animation-delay: 2.4s;">
+            <h1>佳兆业网络</h1>
+            <div class="tag ">
+                <span>企业官网建设</span>
+                <span>美学视觉设计</span>
+            </div>
+            <h4>这里是副标题文案、这里是副标题文案这里是副标题文案这里是副标题</h4>
 
+            <p>
+                这里是文案，底下英文也是这系列的，只是中间家了空格。这里是文案，底下英文也是这系列的，只是中间家了空格。这里是文案，底下英文也是这系列的，只是中间家了空格。这里是文案，底下英文也是这系列的，只是中间家了空格。这里是文案，底下英文也是这系列的，只是中间家了空格。这里是文案，底下英文
+            </p>
+            <br>
+            <br>
+            <p>This is my translation of the English copyThis is my translation of the English
+                copyThis is my
+                translation of the English copyThis is my translation of the English copyThis is my translation of the
+                English copyThis is my translation of the English copyThis is my translation of the English copyThis is
+                my translation of the English copyThis is my translation of the English copy</p>
+            <a href="/contact.html" class="btn-click project-info magnetic" data-strength="25" data-strength-text="15">
+                <div class="btn-fill"></div>
+                <span class="btn-text">
+                    <span class="btn-text-inner change">项目资料</span>
+                </span>
+            </a>
+        </div>
+
+
+    </main>
+    <%- include('components/footer'); -%>
+    <script>
+        $(function () {
+            $('a.top_nav-link[href = "/cases"]').addClass("w--current");
+        })
+    </script>
 </body>
 
 </html>

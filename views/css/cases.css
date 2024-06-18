@@ -1,0 +1,227 @@
+.banner {
+    padding: 10.41vw 0 7.3vw;
+}
+
+.banner h1 {
+    font-size: 3.5vw;
+}
+
+.banner h1 span {
+    color: #ff0000;
+}
+
+.banner p {
+    font-size: 0.83vw;
+    color: #333;
+    opacity: 0.7;
+    margin-top: 30px;
+}
+
+.banner-left {
+    margin-right: 8.1vw;
+}
+
+.banner svg {
+    width: auto;
+    height: 8.3vw;
+}
+
+.section1 .chose {
+    position: relative;
+    /* left: 0;
+    bottom: 8%; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100
+}
+
+.section1 .chose .item {
+    width: 25%;
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer;
+    z-index: 100
+}
+
+.section1 .chose .item .d1 {
+    padding: 1.2vw 25px;
+    border: 1px solid #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: .9vw
+}
+
+.section1 .chose .item .d1 .p1 {
+    color: rgba(0, 0, 0, 0.4)
+}
+
+.section1 .chose .item .d1 .p2 {
+    color: #000
+}
+
+.section1 .chose .item .d1 .icon {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.section1 .chose .item .d2 {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+    font-size: .8vw
+}
+
+.section1 .chose .item .d2 p {
+    padding: 15px;
+    background-color: #000;
+    color: white;
+    transition: all 600ms
+}
+
+.section1 .chose .item .d2 p:hover {
+    background-color: #fff;
+    color: #000
+}
+
+.section2 {
+    position: relative;
+    margin-top: 60px;
+}
+
+.case-item {
+    width: 50%;
+}
+
+/* .section2 {
+    margin: 5vw 5em
+} */
+
+.section2 .cases {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.section2 .cases a {
+    width: 49%;
+    margin-bottom: 5.2vw;
+    perspective: 25px;
+}
+
+/* .section2 .cases a .pic:hover {
+    will-change: transform;
+    transform: translate (0px, 0рх, 0рх) scale3d(1, 1, 1) rotateX(-4.0658deg) rotateY(4.955deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    background-color: rgb (23, 23, 23);
+} */
+.section2 .cases a .pic {
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -o-transition: transform 0.5s;
+}
+
+.section2 .cases a .pic img {
+    width: 100%;
+    display: block;
+    object-fit: cover
+}
+
+.section2 .cases a .text {
+    margin: 30px 0 0;
+}
+
+.section2 .cases a .text .p1 {
+    color: #000;
+    font-size: 1.97vw;
+    font-weight: 700;
+    margin: 30px 0 20px;
+}
+
+.section2 .cases a .text .des {
+    color: #000;
+    font-size: .9vw;
+    font-weight: 400;
+    margin: 20px 0;
+    line-height: 1.6;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.section2 .cases a .text .tag {
+    display: flex
+}
+
+.section2 .cases a .text .tag p {
+    display: inline-block;
+    padding: 4px 34px;
+    background: #000;
+    color: #fff;
+    margin: 0 10px 0 0;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.section2 .more a {
+    width: 20vw;
+    border: 1px solid #000;
+    background: transparent;
+    display: block;
+    text-align: center;
+
+    transition: all 600ms;
+    margin: 0 auto;
+    border-radius: 0;
+    height: 4.1vw;
+
+}
+
+
+.section2 .more a .btn-text {
+    color: #000;
+    font-size: 1.2vw;
+}
+
+.section2 .pagination {
+    margin: 0 9.375vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.section2 .pagination a {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 1.04167vw;
+    font-weight: 300;
+    transition: all 600ms;
+    display: block;
+    width: 40px;
+    text-align: center;
+    line-height: 40px
+}
+
+.section2 .pagination a:hover {
+    background-color: #000;
+    color: white
+}
+
+.section2 .pagination a.on {
+    background-color: #000;
+    color: white
+}
+
+.section2 .pagination a:not(:last-child) {
+    margin: 0 2.08333vw 0 0
+}
