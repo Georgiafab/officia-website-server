@@ -20,11 +20,12 @@ mian()
 module.exports = {
   User: mongoose.model("User", sysModel.userSchema),
   News: mongoose.model("News", sysModel.newsSchema),
-  // Brand: mongoose.model("Brand", sysModel.BrandSchema),
+  Brand: mongoose.model("Brand", sysModel.BrandSchema),
   Classfiy: mongoose.model("Classfiy", sysModel.classfiySchema),
   Case: mongoose.model("Case", sysModel.caseSchema),
   StaticFile: mongoose.model("StaticFile", sysModel.fileSchema),
   Company: mongoose.model("Company", sysModel.companySchema),
   Banner: mongoose.model("Banner", sysModel.bannerSchema),
   Index: mongoose.model("Index", sysModel.indexSchema),
+  Counter: mongoose.model("Counter", sysModel.counterSchema),
 };

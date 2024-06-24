@@ -3,7 +3,15 @@ const md5 = require("../util/md5");
 // const autoinc = require("mongoose-id-autoinc2");
 
 const baseModel = require("./baseModel");
-
+exports.counterSchema = new mongoose.Schema({
+  _id: {
+    type: String,
+    require: true,
+  },
+  sequence_value: {
+    type: Number,
+  },
+});
 // autoinc.init(db);
 // 用户表
 exports.userSchema = new mongoose.Schema({
@@ -59,25 +67,30 @@ exports.newsSchema = new mongoose.Schema({
 });
 
 // // 品牌表
-// exports.BrandSchema = new mongoose.Schema({
-//   brand_name: {
-//     type: String,
-//     require: true,
-//   },
-//   enTitle: {
-//     type: String,
-//     required: true,
-//     unique: true,
-//   },
-//   sort_num: {
-//     type: Number,
-//     default: 0,
-//   },
-//   ...baseModel,
-// });
+exports.BrandSchema = new mongoose.Schema({
+  brand_name: {
+    type: String,
+    require: true,
+  },
+  enTitle: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  // sort_num: {
+  //   type: Number,
+  //   default: 0,
+  // },
+  ...baseModel,
+});
 
 // 分类表
 exports.classfiySchema = new mongoose.Schema({
+  brand_id: {
+    type: mongoose.ObjectId,
+    required: true,
+    ref: "Brand",
+  },
   enTitle: {
     type: String,
     required: true,
@@ -97,7 +110,22 @@ exports.caseSchema = new mongoose.Schema({
   //   required: true,
   //   ref: "Brand",
   // },
+  enTitle: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   classfiy_id: {
+    type: mongoose.ObjectId,
+    required: true,
+    ref: "Classfiy",
+  },
+  classfiy_id1: {
+    type: mongoose.ObjectId,
+    required: true,
+    ref: "Classfiy",
+  },
+  classfiy_id2: {
     type: mongoose.ObjectId,
     required: true,
     ref: "Classfiy",
@@ -118,9 +146,8 @@ exports.caseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  case_banner: {
+  case_desc_en: {
     type: String,
-    require: true,
   },
   case_uri: {
     type: String,

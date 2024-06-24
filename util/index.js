@@ -1,3 +1,4 @@
+const { Counter } = require("../model/index");
 /**
  * 获取当前时间 格式：yyyy-MM-dd HH:MM:SS
  */
@@ -68,22 +69,33 @@ exports.getIPAdress = () => {
  * @param {*} sequenceName: findOneAndUpdate函数的conditions
  * @returns 返回新的sequence_value值，用于重新赋值id
  */
+// exports.getNextSequenceValue = async (sequenceName) => {
+//   let sequenceDocument = await HomeList.findOneAndUpdate(
+//     { id: sequenceName },
+//     { $inc: { sequence_value: 0.5 } },
+//     { new: true },
+//     function (err, data) {
+//       if (err) {
+//         console.log("数据库发生错误");
+//       } else if (!data) {
+//         console.log("未查找到相关数据");
+//         console.log(data);
+//       } else if (data) {
+//         console.log("修改数据成功");
+//         console.log(data);
+//       }
+//     }
+//   );
+//   return sequenceDocument.sequence_value;
+// };
+
 exports.getNextSequenceValue = async (sequenceName) => {
-  let sequenceDocument = await HomeList.findOneAndUpdate(
-    { id: sequenceName },
-    { $inc: { sequence_value: 0.5 } },
-    { new: true },
-    function (err, data) {
-      if (err) {
-        console.log("数据库发生错误");
-      } else if (!data) {
-        console.log("未查找到相关数据");
-        console.log(data);
-      } else if (data) {
-        console.log("修改数据成功");
-        console.log(data);
-      }
-    }
+  var sequenceDocument = await Counter.findOneAndUpdate(
+    {
+      _id: sequenceName,
+    },
+    { $inc: { sequence_value: 1 } },
+    { new: true }
   );
   return sequenceDocument.sequence_value;
 };

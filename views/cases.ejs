@@ -52,12 +52,20 @@
         </div>
 
 
+
         <div class="section1">
             <div class="chose wow text-down">
+                <% for(var i=0;i<classifys.length;i++){%>
+
                 <div class="item">
                     <div class="d1">
-                        <p class="p1">类型：</p>
+                        <p class="p1"><%=classifys[i].title%>：</p>
+                        <% if(currClassify[i+1]){%>
+                        <p class="p2" data-id="<%= currClassify[i+1].enTitle %>">
+                            <%= currClassify[i+1].classfiy_name %></p>
+                        <%}else{%>
                         <p class="p2" data-id="0">全部</p>
+                        <% } %>
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10"
                                 fill="none">
@@ -65,107 +73,52 @@
                             </svg>
                         </div>
                     </div>
+
                     <div class="d2" style="display: none;">
                         <p data-id="0">全部</p>
-                        <p data-id="3">视觉策略</p>
-                        <p data-id="4">商业品牌官网</p>
-                        <p data-id="5">视觉设计</p>
-                        <p data-id="9">摄影</p>
-                        <p data-id="10">系统开发</p>
-                        <p data-id="11">数字营销</p>
+                        <% for(var j=0;j<classifys[i].content.length;j++){%>
+                        <p data-id="<%=classifys[i].content[j].enTitle%>">
+                            <%=classifys[i].content[j].classfiy_name%></p>
+                        <% } %>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="d1">
-                        <p class="p1">行业：</p>
-                        <p class="p2" data-id="0">全部</p>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10"
-                                fill="none">
-                                <use xlink:href="#chooseIcon"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="d2">
-                        <p data-id="0">全部</p>
-                        <p data-id="6">新能源</p>
-                        <p data-id="7">机械制造</p>
-                        <p data-id="8">金融房地产</p>
-                        <p data-id="12">教育咨询</p>
-                    </div>
-                </div>
+                <% } %>
+
             </div>
         </div>
 
         <section class="section section2 case">
             <div class="cases container">
-                <a href="/caseInfo/9.html" class="wow text-down hover-rotate-container">
+                <% for(var i=0;i<caselist.length;i++){%>
+
+                <a href="/case-detail/<%=caselist[i].enTitle%>" class="wow text-down hover-rotate-container">
                     <div class="pic company-card w-inline-block hover-rotate-inner">
-                        <img src="uploads/case-img.jpg" alt="">
+                        <img src="<%=caselist[i].case_image%>" alt="<%=caselist[i].case_name%>">
                     </div>
                     <div class="text">
-                        <p class="p1">华为</p>
+                        <p class="p1"><%=caselist[i].case_name%></p>
                         <div class="des">
-                            极简慕枫与华为携手合作，共同打造了一个引领科技潮流的品牌官网。这个官网不仅汇聚了华为最前沿的技术资讯和创新产品，更通过极简慕枫的专业网站设计，为用户带来流畅、直观、极致的浏览体验。在这里，用户能够深入了解华为的科技创新实力，感受其智慧生活的魅力。同时，这个官网也成为了华为品牌展示、产品推广、互动交流的重要平台，为华为与用户之间建立了更加紧密的联系。
+                            <%=caselist[i].case_desc%>
                         </div>
                         <div class="tag">
-                            <p>集团官网建设</p>
-                            <p>视觉设计</p>
+                            <p><%=caselist[i].classfiy_id1.classfiy_name%></p>
+                            <p><%=caselist[i].classfiy_id2.classfiy_name%></p>
                         </div>
                     </div>
                 </a>
-                <a href="/caseInfo/12.html" class="wow text-down hover-rotate-container">
-                    <div class="pic company-card w-inline-block hover-rotate-inner">
-                        <img src="uploads/case-img.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <p class="p1">迪卡侬Perfly独立站</p>
-                        <div class="des">
-                            极简慕枫与全球知名体育用品零售巨头迪卡侬（Perfly）达成战略合作，共同打造了一个集运动、时尚与科技于一体的全新线上购物平台。这一平台不仅展现了迪卡侬在运动装备领域的专业与多元，更通过极简慕枫的精湛技艺，为用户带来了一种直观、流畅且极富吸引力的购物体验。同时，这个线上平台还注重用户体验，通过极简的设计风格、直观的导航以及高效的购物流程，确保用户能够享受到便捷、舒适的购物体验。这一合作不仅提升了迪卡侬品牌的在线影响力，也为运动爱好者提供了一个集购物、学习与交流于一体的综合性平台。
-                        </div>
-                        <div class="tag">
-                            <p>品牌独立站建设</p>
-                            <p>视觉设计</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="/caseInfo/15.html" class="wow text-down hover-rotate-container">
-                    <div class="pic company-card w-inline-block hover-rotate-inner">
-                        <img src="/uploads/case-img.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <p class="p1">极简慕枫品牌官网——2.0</p>
-                        <div class="des">
-                            极简慕枫，专注于品牌视觉生态设计，秉承“极简”品牌理念，探索极简策略、极简视觉、极简传达的品牌视觉生态营销模式，研究品牌官网到品牌全案视觉生态的全方位品牌数字化设计。在信息爆炸的时代，我们如何用最简单最直接的方法将信息最有效地传达给我们客户是我们的研究方向。
-                        </div>
-                        <div class="tag">
-                            <p>品牌官网建设</p>
-                            <p>视觉设计</p>
-                            <p>品牌迭代升级</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="/caseInfo/13.html" class="wow text-down hover-rotate-container">
-                    <div class="pic company-card w-inline-block hover-rotate-inner">
-                        <img src="/uploads/case-img.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <p class="p1">舜宇智能光学</p>
-                        <div class="des">
-                            极简慕枫与舜宇智能光学携手合作，共同打造了一个兼具科技感与艺术美感的品牌官网。这一官网不仅展现了舜宇智能光学在光学科技领域的领先地位，更通过极简慕枫的精湛技艺，为用户带来了一种极具吸引力的视觉盛宴。极简慕枫凭借其深厚的网站建设经验，将舜宇智能光学的创新科技、高品质产品以及独特的设计理念完美融合。官网设计简洁而不失深度，既突出了舜宇智能光学的专业性，又体现了品牌的独特魅力。用户可以通过这个官网轻松了解舜宇智能光学的最新技术成果、产品线以及应用案例，同时还能享受到流畅且富有创意的用户体验。
-                        </div>
-                        <div class="tag">
-                            <p>品牌官网建设</p>
-                            <p>视觉设计</p>
-                        </div>
-                    </div>
-                </a>
+                <% } %>
+
             </div>
 
             <div class="pagination wow text-down ">
-                <a href="/cases?page=1">1</a>
-                <a href="/cases?page=2">2</a>
-                <a href="javascript:;" class="on">3</a>
+                <% for(var i=1;i<=pages.totalPage;i++){%>
+                <% if(pages.curr==i){%>
+                <a href="javascript:;" class="on"><%=i%></a>
+                <%}else{%>
+                <a href="/cases?page=<%=i%>"><%=i%></a>
+                <% } %>
+
+                <% } %>
             </div>
 
 
@@ -178,22 +131,26 @@
         $(function () {
             $('.chose .item').click(function () {
                 $(this).children('.d2').stop().slideToggle()
+
             })
             $('.chose .item .d2 p').click(function () {
                 let id = $(this).attr('data-id')
                 let value = $(this).html()
                 $(this).parents('.item').children('.d1').find('.p2').attr('data-id', id)
                 $(this).parents('.item').children('.d1').find('.p2').text(value)
-                let ids = []
-                $('.chose .item .d1 .p2').each(function (index, item) {
-                    if ($(item).attr('data-id') != 0) {
-                        ids.push($(item).attr('data-id'))
-                    }
-                })
-                if (ids.length > 0) {
-                    window.location.href = '?type=' + ids.join(',')
+                // let ids = []
+                // let selId = 0
+                // $('.chose .item .d1 .p2').each(function (index, item) {
+                //     if ($(item).attr('data-id') != 0) {
+                //         // ids.push($(item).attr('data-id'))
+                //         selId = $(item).attr('data-id')
+                //     }
+                // })
+                console.log(id)
+                if (id > 0) {
+                    window.location.href = '/cases?type=' + id
                 } else {
-                    window.location.href = '/cases.html'
+                    window.location.href = '/cases'
                 }
             })
         })

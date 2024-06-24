@@ -1,15 +1,22 @@
 const express = require("express");
 const router = express.Router();
-router.get("/", (req, res) => {
-  res.render("index.ejs", { title: 1 });
-});
-router.get("/news", (req, res) => {
-  res.render("news.ejs", { title: 1 });
-});
-router.get("/cases", (req, res) => {
-  res.render("cases.ejs", { title: 1 });
-});
-router.get("/case-detail", (req, res) => {
-  res.render("case-detail.ejs", { title: 1 });
-});
+const viewController = require("../controller/viewController");
+router
+  .get("/", async (req, res) => {
+    // const data = await viewController.casesList();
+    res.render("index.ejs", { title: 1 });
+  })
+  .get("/news", (req, res) => {
+    res.render("news.ejs", { title: 1 });
+  })
+  .get("/cases", async (req, res) => {
+    const data = await viewController.casesList(req.query);
+    // console.log(data);
+    res.render("cases.ejs", data);
+  })
+  .get("/case-detail/:id", async (req, res) => {
+    // console.log(req.params);
+    const data = await viewController.caseDetail(req.params);
+    res.render("case-detail.ejs", data);
+  });
 module.exports = router;
