@@ -18,5 +18,9 @@ router
     // console.log(req.params);
     const data = await viewController.caseDetail(req.params);
     res.render("case-detail.ejs", data);
+  })
+  .get("/service", async (req, res) => {
+    // const data = await viewController.caseDetail(req.params);
+    res.render("service.ejs", data);
   });
 module.exports = router;
